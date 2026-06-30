@@ -73,6 +73,10 @@ em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--accent);fo
 }
 .ticker-marquee span{display:inline-flex;align-items:center;gap:60px;}
 .ticker-dot{color:var(--accent-soft);}
+/* ticker stamp: keep the wordplay readable (no all-caps mangling) */
+.ticker .t-stamp{text-transform:none;display:inline-flex;align-items:baseline;gap:2px;letter-spacing:0;}
+.ticker .t-stamp b{font-family:'Archivo Black';font-weight:400;letter-spacing:1px;color:var(--paper);}
+.ticker .t-stamp em{font-family:'Instrument Serif';font-style:italic;color:var(--accent-soft);}
 @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-100%);}}
 
 /* ============================================================
@@ -201,9 +205,15 @@ nav{
 .hero-cine-title .hl{color:var(--accent-soft);}
 .hero-cine-sub{font-size:clamp(18px,2.4vw,24px);max-width:620px;margin-top:26px;font-weight:500;color:rgba(237,234,227,.92);}
 .hero-cine-sub em{color:var(--paper);}
-.hero-cine-stamp{margin-top:22px;font-size:20px;}
-.hero-cine-stamp b{font-family:'Archivo Black';color:var(--accent-soft);}
-.hero-cine-stamp span{font-family:'Instrument Serif';font-style:italic;}
+/* stacked LEYOur / home. stamp (shared shape) */
+.ls-top{display:block;font-family:'Archivo Black';line-height:.92;}
+.ls-top em{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-size:.84em;}
+.ls-bot{display:block;font-family:'Instrument Serif';font-style:italic;font-weight:400;line-height:.95;}
+
+.hero-cine-stamp{margin-top:24px;display:flex;flex-direction:column;}
+.hero-cine-stamp .ls-top{font-size:30px;color:var(--paper);}
+.hero-cine-stamp .ls-top em{color:var(--accent-soft);}
+.hero-cine-stamp .ls-bot{font-size:24px;color:var(--accent-soft);}
 .hero-cine-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
 .hero-cine-scroll{position:absolute;right:var(--pad);bottom:40px;z-index:2;color:var(--paper);text-decoration:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:12px;opacity:.8;}
 .hero-cine-scroll-line{width:1px;height:46px;background:var(--paper);}
@@ -320,8 +330,10 @@ nav{
    ============================================================ */
 .stampband{background:var(--accent);color:var(--paper);padding:104px var(--pad);text-align:center;}
 .stampband-inner{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:18px;}
-.stampband .big{font-family:'Archivo Black';font-size:clamp(52px,9vw,132px);line-height:.9;}
-.stampband .big span{font-family:'Instrument Serif';font-style:italic;font-weight:400;}
+.stampband .big{font-family:'Archivo Black';font-size:clamp(52px,9vw,132px);line-height:.84;display:flex;flex-direction:column;align-items:center;}
+.stampband .big .ls-top{color:var(--paper);}
+.stampband .big .ls-top em{color:var(--paper);font-size:.62em;}
+.stampband .big .ls-bot{color:var(--paper);font-size:.6em;}
 .stampband p{max-width:540px;font-size:18px;opacity:.92;}
 
 /* ============================================================
@@ -443,8 +455,10 @@ nav{
    ============================================================ */
 footer{background:var(--ink);color:var(--muted-light);padding:72px var(--pad) 36px;}
 .footer-grid{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
-.footer-logo{font-family:'Archivo Black';font-size:30px;color:var(--paper);text-decoration:none;display:inline-flex;align-items:baseline;gap:8px;}
-.footer-logo .footer-sub{font-family:'Instrument Serif';font-style:italic;font-size:.62em;color:var(--accent-soft);}
+.footer-logo{text-decoration:none;display:inline-flex;flex-direction:column;}
+.footer-logo .ls-top{font-size:30px;color:var(--paper);}
+.footer-logo .ls-top em{color:var(--accent-soft);}
+.footer-logo .ls-bot{font-size:24px;color:var(--accent-soft);}
 .footer-tagline{margin-top:18px;font-size:15px;max-width:340px;line-height:1.6;}
 .footer-col h4{color:var(--paper);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
 .footer-col a{display:block;text-decoration:none;color:var(--muted-light);font-size:15px;margin-bottom:10px;transition:.18s;}
