@@ -328,7 +328,7 @@ nav{
    ============================================================ */
 .stampband{background:var(--accent);color:var(--paper);padding:104px var(--pad);text-align:center;}
 .stampband-inner{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:18px;}
-.stampband .big{font-family:'Archivo Black';font-size:clamp(52px,9vw,128px);line-height:.82;display:flex;flex-direction:column;align-items:center;}
+.stampband .big{font-family:'Archivo Black';font-size:clamp(52px,9vw,128px);line-height:.82;display:flex;flex-direction:column;align-items:flex-start;}
 .stampband .big .ls-le,.stampband .big .ls-yo{color:var(--paper);}
 .stampband .big .ls-ur{color:var(--paper);}
 .stampband p{max-width:540px;font-size:18px;opacity:.92;}
